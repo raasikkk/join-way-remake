@@ -174,7 +174,7 @@ body {
     @apply bg-j-blue px-[50px] py-[15px] rounded-[36px] text-white text-center mx-auto;
   }
   /* Author Card Effect */
-  .portfolio-card:hover .description {
+  /* .portfolio-card:hover .description {
     opacity: 1;
   }
   .portfolio-cards::-webkit-scrollbar {
@@ -184,19 +184,19 @@ body {
   .portfolio-cards {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
+  } */
 
   /* .portfolio-cards {
     @apply mt-[100px] min-h-[650px] grid sm:justify-items-center md:justify-items-center lg:justify-items-center customlg:justify-items-start md:grid-cols-1 customlg:grid-cols-8 customlg:gap-[520px] customlg:overflow-x-auto;
   } */
 
   .portfolio-card {
-    @apply sm:w-[500px] md:w-[500px] lg:w-[550px] sm:h-[250px] md:h-[300px] lg:h-[335px];
+    @apply xxxs:w-[300px] md:w-[400px] lg:w-[450px] sm:h-[250px] md:h-[300px] lg:h-[305px];
   }
-
+  /* 
   .description {
     @apply absolute inset-0 sm:h-[250px] md:h-[300px] lg:h-[335px] bg-black bg-opacity-65 flex items-center justify-center rounded-[39px] opacity-0 transition-opacity duration-300;
-  }
+  } */
 
   .text-descr {
     opacity: 0;

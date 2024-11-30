@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Preloader = () => {
   const [loaded, setLoaded] = useState(false);
+  const location = useLocation(); // Detects route changes.
 
   useEffect(() => {
-    const handleLoad = () => setLoaded(true);
+    // Show the preloader when route changes.
+    setLoaded(false);
 
-    window.addEventListener("load", handleLoad);
-  }, []);
+    const timer = setTimeout(() => setLoaded(true), 1000); // Simulate loading time.
+    return () => clearTimeout(timer); // Cleanup on unmount.
+  }, [location]);
+
   return (
     <div
       id="preloader"

@@ -1,11 +1,11 @@
 const Project = () => {
   return (
-    <div className="container mx-auto">
+    <div className="">
       <div className="portfolio-card rounded-3xl shadow-2xl shadow-black hiddenYEl show">
         <img
           src="/grand-market.png"
           alt="join-way-shop"
-          className=" rounded-t-3xl sm:h-[250px] md:h-[300px] lg:h-[335px] w-full"
+          className=" rounded-t-3xl w-full"
         />
         <div className="descr shadow-2xl shadow-black rounded-b-3xl bg-white p-8 ">
           <h3 className="text-j-blue font-bold text-3xl">Grand Market</h3>
