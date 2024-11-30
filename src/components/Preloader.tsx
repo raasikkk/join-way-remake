@@ -9,7 +9,7 @@ const Preloader = () => {
     // Show the preloader when route changes.
     setLoaded(false);
 
-    const timer = setTimeout(() => setLoaded(true), 1000); // Simulate loading time.
+    const timer = setTimeout(() => setLoaded(true), 500); // Simulate loading time.
     return () => clearTimeout(timer); // Cleanup on unmount.
   }, [location]);
 

@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 const Hero = () => {
-  useIntersectionObserver("show");
   return (
     <>
       <section className="hero mt-[100px] container mx-auto">

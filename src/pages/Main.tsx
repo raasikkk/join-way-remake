@@ -8,8 +8,10 @@ import Service from "../components/Service";
 import Timer from "../components/Timer";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
 const Main = () => {
+  useIntersectionObserver("show");
+
   return (
     <>
       <Preloader />

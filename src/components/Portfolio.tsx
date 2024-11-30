@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import Project from "./Project";
+import { clients } from "../constants/clients";
 
 const Portfolio = () => {
   // const slides = [
@@ -21,17 +22,12 @@ const Portfolio = () => {
         {/* <div className="portfolio-cards mt-24 h-[650px]"></div> */}
         <div className="overflow-hidden mt-24 w-full h-full relative">
           <div className="flex w-[200%] gap-16 animate-scroll min-h-[700px]">
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-            <Project />
+            {clients.map((client) => (
+              <Project key={client.id} client={client} />
+            ))}
+            {clients.map((client) => (
+              <Project key={client.id} client={client} />
+            ))}
           </div>
         </div>
       </section>
