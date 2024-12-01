@@ -15,13 +15,13 @@ const Project = ({ client }: ProjectProps) => {
 
   return (
     <div className="">
-      <div className="portfolio-card rounded-3xl shadow-2xl shadow-black ">
+      <div className="portfolio-card rounded-3xl shadow-lg shadow-black/50 ">
         <img
           src={client.image}
           alt="join-way-shop"
           className=" rounded-t-3xl w-full"
         />
-        <div className="descr shadow-2xl shadow-black rounded-b-3xl bg-white p-8 ">
+        <div className="descr shadow-lg shadow-black/50 rounded-b-3xl bg-white p-8 ">
           <h3 className="text-j-blue font-bold xxxs:text-lg md:text-2xl lg:text-3xl">
             {client.name}
           </h3>
