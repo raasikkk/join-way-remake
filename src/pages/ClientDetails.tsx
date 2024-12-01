@@ -55,29 +55,31 @@ const ClientDetails = () => {
         )}
       </div>
 
-      <div className="container mx-auto">
-        {/* Swiper for Continuous Scrolling */}
+      <div className="flex justify-center mt-24">
         <Swiper
-          spaceBetween={16}
-          slidesPerView={3}
+          spaceBetween={16} // Space between slides
+          slidesPerView={3} // Show 3 slides at a time
           autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
+            delay: 0, // No delay, continuously scroll
+            disableOnInteraction: false, // Keeps autoplay running even after user interaction
           }}
           loop={true} // Infinite scroll
           freeMode={true} // Enables smooth, continuous scrolling
           allowTouchMove={true} // Allow user to manually swipe
-          speed={3000} // Smooth transition between slides (adjust speed as needed)
-          className="min-h-[600px]"
+          speed={3000} // Smooth transition between slides
+          className="min-h-[600px] w-full" // Full width to stretch and control centering
           breakpoints={{
             100: {
               slidesPerView: 1, // 1 slide on smaller screens
+              centeredSlides: true, // Centers the single slide
             },
             640: {
               slidesPerView: 2, // 2 slides on medium screens
+              centeredSlides: true, // Center slides on medium screens
             },
             1228: {
               slidesPerView: 3, // 3 slides on large screens
+              centeredSlides: true, // Center slides on larger screens
             },
           }}
         >
