@@ -26,7 +26,7 @@ const Portfolio = () => {
       <div className="flex justify-center mt-24">
         <Swiper
           spaceBetween={16} // Space between slides
-          slidesPerView={3} // Show 3 slides at a time
+          slidesPerView={3} // Default to show 3 slides at a time
           autoplay={{
             delay: 0, // No delay, continuously scroll
             disableOnInteraction: false, // Keeps autoplay running even after user interaction
@@ -35,19 +35,19 @@ const Portfolio = () => {
           freeMode={true} // Enables smooth, continuous scrolling
           allowTouchMove={true} // Allow user to manually swipe
           speed={3000} // Smooth transition between slides
-          className="min-h-[600px] w-full" // Full width to stretch and control centering
+          className="min-h-[600px] w-full max-w-full" // Full width to stretch and control centering
           breakpoints={{
             100: {
-              slidesPerView: 1, // 1 slide on smaller screens
-              centeredSlides: true, // Centers the single slide
+              slidesPerView: "auto", // Allow slide to take up only the necessary width
+              centeredSlides: true, // Center the slides on mobile
             },
             640: {
-              slidesPerView: 2, // 2 slides on medium screens
-              centeredSlides: true, // Center slides on medium screens
+              slidesPerView: "auto", // Auto slide size on medium screens
+              centeredSlides: true, // Center the slides on medium screens
             },
             1228: {
-              slidesPerView: 3, // 3 slides on large screens
-              centeredSlides: true, // Center slides on larger screens
+              slidesPerView: 3, // 3 slides on larger screens
+              centeredSlides: false, // No centering on larger screens
             },
           }}
         >
