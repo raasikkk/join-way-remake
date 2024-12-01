@@ -7,8 +7,17 @@ import Preloader from "../components/Preloader";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+
+import SwiperCore from "swiper";
+import { Autoplay } from "swiper/modules";
+import { FreeMode } from "swiper/modules";
 
 const ClientDetails = () => {
+  SwiperCore.use([Autoplay, FreeMode]);
+
   useIntersectionObserver("show");
 
   useEffect(() => {
@@ -45,16 +54,41 @@ const ClientDetails = () => {
           </p>
         )}
       </div>
-      <div className="overflow-hidden mt-24 w-full h-full relative">
-        <div className="flex w-[200%] gap-16 animate-scroll min-h-[700px]">
+
+      <div className="container mx-auto">
+        {/* Swiper for Continuous Scrolling */}
+        <Swiper
+          spaceBetween={16}
+          slidesPerView={3}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          loop={true} // Infinite scroll
+          freeMode={true} // Enables smooth, continuous scrolling
+          allowTouchMove={true} // Allow user to manually swipe
+          speed={3000} // Smooth transition between slides (adjust speed as needed)
+          className="min-h-[600px]"
+          breakpoints={{
+            100: {
+              slidesPerView: 1, // 1 slide on smaller screens
+            },
+            640: {
+              slidesPerView: 2, // 2 slides on medium screens
+            },
+            1228: {
+              slidesPerView: 3, // 3 slides on large screens
+            },
+          }}
+        >
           {clients.map((client) => (
-            <Project key={client.id} client={client} />
+            <SwiperSlide key={client.id}>
+              <Project client={client} />
+            </SwiperSlide>
           ))}
-          {clients.map((client) => (
-            <Project key={client.id} client={client} />
-          ))}
-        </div>
+        </Swiper>
       </div>
+
       <Contact />
       <Footer />
     </>
