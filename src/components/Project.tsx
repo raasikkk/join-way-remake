@@ -1,12 +1,13 @@
-import { Client } from "../constants/clients";
+// import { Client } from "../constants/clients";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+// interface ProjectProps {
+//   client: Client;
+// }
 
-interface ProjectProps {
-  client: Client;
-}
-
-const Project = ({ client }: ProjectProps) => {
+const Project = ({ client }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleDetailsClick = () => {
     window.scrollTo(0, 0);
@@ -26,17 +27,17 @@ const Project = ({ client }: ProjectProps) => {
             {client.name}
           </h3>
           <p className="mt-3 text-j-blue xxxs:text-base md:text-lg lg:text-xl">
-            {client.description}
+            {client.description_ru}
           </p>
           <div className="buttons mt-8 flex justify-between gap-6">
             <button
               className="btn-size bg-j-blue text-white rounded-2xl hover:bg-j-blue/80"
               onClick={handleDetailsClick}
             >
-              Подробнее
+              {t("card_btn_1")}
             </button>
             <button className="btn-size bg-white border-4 border-j-blue rounded-2xl hover:bg-j-blue/20">
-              Сайт
+              {t("card_btn_2")}
             </button>
           </div>
         </div>

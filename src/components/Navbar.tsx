@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+// import LanguageSwitcher from "./LanguageSwitcher";
 // import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   // Handle Navbar
@@ -44,6 +46,8 @@ const Navbar = () => {
       return newMode;
     });
   };
+
+  const { t } = useTranslation();
   return (
     <div className="container mx-auto">
       <nav id="nav" className="mt-7 lg:flex ">
@@ -96,7 +100,7 @@ const Navbar = () => {
                   to="/"
                   className="scroll-link hover:border-b-2 border-b-2 border-j-blue dark:border-white"
                 >
-                  Главная
+                  {t("nav_link_1")}
                 </Link>
               </li>
               <li>
@@ -104,7 +108,7 @@ const Navbar = () => {
                   href="#about"
                   className="scroll-link hover:border-b-2 border-j-blue dark:border-white"
                 >
-                  О Нас
+                  {t("nav_link_2")}
                 </a>
               </li>
               <li>
@@ -112,7 +116,7 @@ const Navbar = () => {
                   href="#portfolio"
                   className="scroll-link hover:border-b-2 border-j-blue dark:border-white"
                 >
-                  Портфолио
+                  {t("nav_link_3")}
                 </a>
               </li>
               <li>
@@ -120,7 +124,7 @@ const Navbar = () => {
                   href="#services"
                   className="scroll-link hover:border-b-2 border-j-blue dark:border-white"
                 >
-                  Наши услуги
+                  {t("nav_link_4")}
                 </a>
               </li>
               <li>
@@ -128,7 +132,7 @@ const Navbar = () => {
                   href="#contacts"
                   className="scroll-link hover:border-b-2 border-j-blue dark:border-white"
                 >
-                  Контакты
+                  {t("nav_link_5")}
                 </a>
               </li>
             </ul>

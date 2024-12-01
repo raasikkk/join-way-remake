@@ -1,9 +1,12 @@
+import { useTranslation } from "react-i18next";
+
 const Service = () => {
+  const { t } = useTranslation();
   return (
     <>
       <section id="services" className="services mt-[100px]">
         <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold dark:text-j-yellow text-j-blue text-center hiddenYEl">
-          Наши Услуги
+          {t("service_header")}
         </h1>
         <div className="services-cards text-center mt-[100px] flex justify-around flex-wrap gap-[50px] space-x-6">
           {/* <!-- Service Card 1 --> */}
@@ -12,14 +15,10 @@ const Service = () => {
               <img src="/dev-icon.png" alt="dev-icon" className=" p-4 " />
             </div>
             <h2 className="mt-16 text-center font-bold text-[25px]">
-              Веб-Разработка
+              {t("service_1")}
             </h2>
             <div className="line my-2 mx-auto w-[35%] border-t-4 border-[#1C004B]"></div>
-            <p className="text-sm">
-              Создание адаптивных сайтов, интернет-магазинов, корпоративных
-              порталов и лендингов, которые соответствуют современным
-              требованиям и ожиданиям пользователей.
-            </p>
+            <p className="text-sm">{t("service_1_descr")}</p>
           </div>
 
           {/* <!-- Service Card 2 --> */}
@@ -28,14 +27,10 @@ const Service = () => {
               <img src="/design-icon.png" alt="design-icon" className=" p-4 " />
             </div>
             <h2 className="mt-16 text-center font-bold text-[25px]">
-              Веб-Дизайн
+              {t("service_2")}
             </h2>
             <div className="line my-2 mx-auto w-[35%] border-t-4 border-[#1C004B]"></div>
-            <p className="text-sm">
-              Разработка уникального визуального стиля, который отражает
-              индивидуальность вашего бренда и привлекает внимание целевой
-              аудитории.
-            </p>
+            <p className="text-sm">{t("service_2_descr")}</p>
           </div>
 
           {/* <!-- Service Card 3 --> */}
@@ -44,14 +39,10 @@ const Service = () => {
               <img src="/parse-icon.png" alt="parse-icon" className=" p-4 " />
             </div>
             <h2 className="mt-16 text-center font-bold text-[25px]">
-              SEO и продвижение
+              {t("service_3")}
             </h2>
             <div className="line my-2 mx-auto w-[35%] border-t-4 border-[#1C004B]"></div>
-            <p className="text-sm">
-              Оптимизация сайтов для поисковых систем, создание
-              контент-стратегии и проведение маркетинговых кампаний,
-              направленных на увеличение трафика и конверсии.
-            </p>
+            <p className="text-sm">{t("service_3_descr")}</p>
           </div>
         </div>
       </section>

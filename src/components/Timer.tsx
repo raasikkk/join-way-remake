@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 // import { months, weekdays } from "../constants/date";
+import { useTranslation } from "react-i18next";
 
 const Timer = () => {
+  const { t } = useTranslation();
+
   const calculateFutureDate = () => {
     const today = new Date();
     today.setDate(today.getDate() + 10);
@@ -53,10 +56,10 @@ const Timer = () => {
     <>
       <section className="timer mt-[200px]">
         <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold dark:text-j-yellow text-j-blue text-center hiddenYEl ">
-          Супер-скидка На Все Услуги
+          <span className="text-red-600 font-bold">20 %</span> {t("discount")}
         </h1>
         <h2 className="mt-[20px] max-w-[500px] mx-auto sm:text-[15.34px] md:text-[18.34px] lg:text-[22.34px] font-medium dark:text-j-yellow text-j-blue text-center hiddenYEl">
-          Улучшите свой онлайн-образ с нами и получите отличную цену
+          {t("discount_descr")}
         </h2>
         {/* <!-- Deadline Timer --> */}
         <div className="deadline mt-[30px] flex justify-center flex-wrap gap-[20px] hiddenYEl">
@@ -67,7 +70,7 @@ const Timer = () => {
               alt=""
             />
             <h3 className="">{format(timeLeft.days)}</h3>
-            <span className="span">Дней</span>
+            <span className="span">{t("days")}</span>
           </div>
           <div className="deadline-format relative w-[179px]" id="days">
             <img
@@ -76,7 +79,7 @@ const Timer = () => {
               alt=""
             />
             <h3 className="">{format(timeLeft.hours)}</h3>
-            <span className="span">Часов</span>
+            <span className="span">{t("hours")}</span>
           </div>
           <div className="deadline-format relative w-[179px]" id="days">
             <img
@@ -85,7 +88,7 @@ const Timer = () => {
               alt=""
             />
             <h3 className="">{format(timeLeft.minutes)}</h3>
-            <span className="span">Минут</span>
+            <span className="span">{t("minutes")}</span>
           </div>
           <div className="deadline-format relative w-[179px]" id="days">
             <img
@@ -94,7 +97,7 @@ const Timer = () => {
               alt=""
             />
             <h3 className="">{format(timeLeft.seconds)}</h3>
-            <span className="span">Секунд</span>
+            <span className="span">{t("seconds")}</span>
           </div>
         </div>
       </section>

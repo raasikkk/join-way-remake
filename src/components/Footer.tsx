@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="mt-[50px] bg-j-blue min-h-[350px]">
       <div className="container mx-auto">
@@ -21,27 +23,27 @@ const Footer = () => {
             </li>
             <li>
               <a href="#" className="hover:border-b-2 border-white">
-                Главная
+                {t("nav_link_1")}
               </a>
             </li>
             <li>
               <a href="#about" className="hover:border-b-2 border-white">
-                О Нас
+                {t("nav_link_2")}
               </a>
             </li>
             <li>
               <a href="#portfolio" className="hover:border-b-2 border-white">
-                Портфолио
+                {t("nav_link_3")}
               </a>
             </li>
             <li>
               <a href="#services" className="hover:border-b-2 border-white">
-                Наши услуги
+                {t("nav_link_4")}
               </a>
             </li>
             <li>
               <a href="#contacts" className="hover:border-b-2 border-white">
-                Контакты
+                {t("nav_link_5")}
               </a>
             </li>
           </ul>

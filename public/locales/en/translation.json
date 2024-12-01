@@ -1,0 +1,63 @@
+{
+  "select_language": "Select Language",
+
+  "nav_link_1": "Home",
+  "nav_link_2": "About us",
+  "nav_link_3": "Portfolio",
+  "nav_link_4": "Our Services",
+  "nav_link_5": "Contact us",
+
+  "hero_project": "Each project",
+  "hero_descr": " — is a unique story, and we craft it creatively and beautifully.",
+  "hero_order": "Order",
+
+  "about_header": "About Us",
+  "about_descr_1": "We are a team of experienced professionals specializing in web development and design. We offer a wide range of services aimed at creating and promoting effective and adaptive web solutions for your business.",
+  "about_descr_2": "Our primary mission is to elevate your business to new heights using modern technologies, creative approaches, and proven methods.",
+  "about_descr_3": "Years of experience have enabled us to tackle complex challenges and deliver products that fully meet high-quality standards. Every project is unique to us, and we strive not only to meet but exceed our clients' expectations.",
+  "about_why": "Why Choose Us:",
+  "about_item_1": "Personalized Approach",
+  "about_item_descr_1": "Tailored solutions for unique needs.",
+  "about_item_2": "Comprehensive Approach",
+  "about_item_descr_2": "Full-cycle services.",
+  "about_item_3": "Technological Expertise",
+  "about_item_descr_3": "Cutting-edge technologies.",
+  "about_item_4": "Transparency and Collaboration",
+  "about_item_descr_4": "Open communication.",
+
+  "author_1": "Dimash Aizharykov",
+  "author_role_1": "CEO & Founder",
+  "author_2": "Rasul Zhankeldyuly",
+  "author_role_2": "Full Stack Developer",
+  "author_3": "Issatay Makhanmetov",
+  "author_role_3": "Head Of Design & Main Designer",
+  "author_4": "Darzhan Eduardovich",
+  "author_role_4": "Full Stack Developer & Team Lead of Dev`s",
+
+  "portfolio_header": "Check Out Our Portfolio",
+
+  "service_header": "Our Services",
+  "service_1": "Web Development",
+  "service_1_descr": " Creating responsive websites, online stores, corporate portals, and landing pages that meet modern user expectations and requirements.",
+  "service_2": "Web - Design",
+  "service_2_descr": "Developing a unique visual style that reflects your brand's identity and attracts the target audience's attention.",
+  "service_3": "SEO and Promotion",
+  "service_3_descr": "Optimizing websites for search engines, creating content strategies, and running marketing campaigns to increase traffic and conversions.",
+
+  "discount": "- Discount on Web Development",
+  "discount_descr": "Improve your website with us and get an excellent price.",
+  "days": "Days",
+  "hours": "Hours",
+  "minutes": "Minutes",
+  "seconds": "Seconds",
+
+  "contact_question": "Have questions or want to order a website?",
+  "contact_offer": "We are always happy to help! Contact us, and we'll answer all your questions.",
+
+  "goal": "Goal",
+  "solution": "Solution",
+  "result": "Result",
+
+  "card_btn_1": "More Details",
+  "card_btn_2": "Website"
+}

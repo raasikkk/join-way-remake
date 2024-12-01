@@ -1,5 +1,7 @@
+import { useState, useEffect } from "react";
+import axiosInstance from "../api/axiosInstance";
 import Project from "./Project";
-import { clients } from "../constants/clients";
+import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -10,6 +12,24 @@ import { FreeMode } from "swiper/modules";
 
 const Portfolio = () => {
   SwiperCore.use([Autoplay, FreeMode]);
+  const { t } = useTranslation();
+  // Django data
+  const [clients, setClients] = useState([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchClients = async () => {
+      try {
+        const response = await axiosInstance.get("clients/");
+        setClients(response.data);
+      } catch (err) {
+        setError("Failed to fetch clients");
+        console.error(err);
+      }
+    };
+
+    fetchClients();
+  }, []);
 
   return (
     <section
@@ -18,12 +38,13 @@ const Portfolio = () => {
     >
       <div className="container mx-auto">
         <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold text-j-blue dark:text-j-yellow hiddenYEl max-w-[527px]">
-          Посмотрите Наше Портфолио
+          {t("portfolio_header")}
         </h1>
       </div>
 
       {/* Swiper */}
       <div className="flex justify-center mt-24">
+        {error && <p>{error}</p>}
         <Swiper
           spaceBetween={16} // Space between slides
           slidesPerView={3} // Default to show 3 slides at a time

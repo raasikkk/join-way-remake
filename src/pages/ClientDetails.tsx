@@ -1,6 +1,5 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { clients } from "../constants/clients";
 import Navbar from "../components/Navbar";
 import Project from "../components/Project";
 import Preloader from "../components/Preloader";
@@ -10,22 +9,45 @@ import useIntersectionObserver from "../hooks/useIntersectionObserver";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
-
 import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
 import { FreeMode } from "swiper/modules";
+import axiosInstance from "../api/axiosInstance";
+// import LanguageSwitcher from "../components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const ClientDetails = () => {
   SwiperCore.use([Autoplay, FreeMode]);
-
   useIntersectionObserver("show");
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const [clients, setClients] = useState([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchClients = async () => {
+      try {
+        const response = await axiosInstance.get("clients/");
+        setClients(response.data);
+      } catch (err) {
+        setError("Failed to fetch clients");
+        console.error(err);
+      }
+    };
+    fetchClients();
+  }, []);
+
   const { id } = useParams<{ id: string }>();
   const client = clients.find((c) => c.id === parseInt(id || "", 10));
+
+  const getFieldByLanguage = (client, field) => {
+    const lang = i18n.language; // Get the current language
+    return client[`${field}_${lang}`] || client[`${field}_en`]; // Default to English if the language is not available
+  };
 
   if (!client) {
     return <p>Client not found</p>;
@@ -35,6 +57,8 @@ const ClientDetails = () => {
     <>
       <Preloader />
       <Navbar />
+      {/* <LanguageSwitcher /> */}
+      {error && <p>{error}</p>}
 
       <div className="container mx-auto xxxs:mt-10 md:mt-16 lg:mt-24 flex xxxs:flex-wrap customlg:flex-nowrap p-3 gap-14">
         <div className="flex">
@@ -44,19 +68,29 @@ const ClientDetails = () => {
           <h2 className="font-bold xxxs:text-lg sm:text-xl md:text-3xl lg:text-5xl">
             {client.name}
           </h2>
-          <h3 className="font-semibold xxxs:text-base md:text-lg">Цель:</h3>
-          <p className="xxxs:text-base md:text-lg">{client.goal}</p>
-          <h3 className="font-semibold xxxs:text-base md:text-lg">Решение:</h3>
-          <p className="xxxs:text-base md:text-lg">{client.solution}</p>
           <h3 className="font-semibold xxxs:text-base md:text-lg">
-            Результат:
+            {t("goal")}:
           </h3>
-          <p className="xxxs:text-base md:text-lg">{client.result}</p>
+          <p className="xxxs:text-base md:text-lg">
+            {getFieldByLanguage(client, "goal")}
+          </p>
+          <h3 className="font-semibold xxxs:text-base md:text-lg">
+            {t("solution")}:
+          </h3>
+          <p className="xxxs:text-base md:text-lg">
+            {getFieldByLanguage(client, "solution")}
+          </p>
+          <h3 className="font-semibold xxxs:text-base md:text-lg">
+            {t("result")}:
+          </h3>
+          <p className="xxxs:text-base md:text-lg">
+            {getFieldByLanguage(client, "result")}
+          </p>
         </div>
       </div>
 
       {/* Comment */}
-      {client.comment && (
+      {getFieldByLanguage(client, "comment") && (
         <div className="mt-24 p-8 flex flex-col bg-black max-w-[800px] min-h-[300px] rounded-[45px] mx-auto">
           <div className="flex flex-wrap mt-5 items-center justify-between">
             <div className="flex gap-3">
@@ -68,55 +102,37 @@ const ClientDetails = () => {
             </div>
             <img src="/отзыв.png" />
           </div>
-          <p className="text-white mt-5">{client.comment}</p>
+          <p className="text-white mt-5">
+            {getFieldByLanguage(client, "comment")}
+          </p>
         </div>
       )}
 
-      {/* <div className="p-8">
-        <h1 className="text-4xl font-bold">{client.name}</h1>
-        <img src={client.image} alt={client.name} className="my-4 w-full" />
-        <p className="text-xl">{client.description}</p>
-        <p className="text-xl mt-4">
-          <strong>Goal:</strong> {client.goal}
-        </p>
-        <p className="text-xl mt-4">
-          <strong>Solution:</strong> {client.solution}
-        </p>
-        <p className="text-xl mt-4">
-          <strong>Result:</strong> {client.result}
-        </p>
-        {client.comment && (
-          <p className="text-xl mt-4">
-            <strong>Comment:</strong> {client.comment}
-          </p>
-        )}
-      </div> */}
-
       <div className="flex container mx-auto justify-center mt-24">
         <Swiper
-          spaceBetween={16} // Space between slides
-          slidesPerView={3} // Default to show 3 slides at a time
+          spaceBetween={16}
+          slidesPerView={3}
           autoplay={{
-            delay: 0, // No delay, continuously scroll
-            disableOnInteraction: false, // Keeps autoplay running even after user interaction
+            delay: 0,
+            disableOnInteraction: false,
           }}
-          loop={true} // Infinite scroll
-          freeMode={true} // Enables smooth, continuous scrolling
-          allowTouchMove={true} // Allow user to manually swipe
-          speed={3000} // Smooth transition between slides
-          className="xxxs:min-h-[500px] sm:min-h-[500px] lg:min-h-[600px] w-full max-w-full" // Full width to stretch and control centering
+          loop={true}
+          freeMode={true}
+          allowTouchMove={true}
+          speed={3000}
+          className="xxxs:min-h-[500px] sm:min-h-[500px] lg:min-h-[600px] w-full max-w-full"
           breakpoints={{
             100: {
-              slidesPerView: "auto", // Allow slide to take up only the necessary width
-              centeredSlides: true, // Center the slides on mobile
+              slidesPerView: "auto",
+              centeredSlides: true,
             },
             640: {
-              slidesPerView: 2, // Auto slide size on medium screens
-              centeredSlides: true, // Center the slides on medium screens
+              slidesPerView: 2,
+              centeredSlides: true,
             },
             1228: {
-              slidesPerView: 3, // 3 slides on larger screens
-              centeredSlides: false, // No centering on larger screens
+              slidesPerView: 3,
+              centeredSlides: false,
             },
           }}
         >

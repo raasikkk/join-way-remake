@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./style.css";
 import Main from "./pages/Main";
 import ClientDetails from "./pages/ClientDetails";
+import "./i18n";
 
 function App() {
   return (
