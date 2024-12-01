@@ -15,7 +15,7 @@ const Portfolio = () => {
         </div>
         {/* <!-- Portfolio Cards --> */}
         <div className="overflow-hidden mt-24 w-full h-full relative">
-          <div className="flex w-[200%] gap-16 animate-scroll min-h-[600px]">
+          <div className="flex gap-16 animate-scroll min-h-[600px]">
             {clients.map((client) => (
               <Project key={client.id} client={client} />
             ))}
