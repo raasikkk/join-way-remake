@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white dark:bg-gray-900;
   overflow-x: hidden;
+  @apply bg-white dark:bg-gray-900;
 }
 
 @layer base {
@@ -391,6 +391,19 @@ body {
   100% {
     transform: translateX(-100%);
   }
+}
+
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }
 
 .btn-size {
