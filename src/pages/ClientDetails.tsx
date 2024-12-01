@@ -35,7 +35,44 @@ const ClientDetails = () => {
     <>
       <Preloader />
       <Navbar />
-      <div className="p-8">
+
+      <div className="container mx-auto xxxs:mt-10 md:mt-16 lg:mt-24 flex xxxs:flex-wrap customlg:flex-nowrap p-3 gap-14">
+        <div className="flex">
+          <img src={client.image} alt="client" />
+        </div>
+        <div className="flex flex-col w-[700px]">
+          <h2 className="font-bold xxxs:text-lg sm:text-xl md:text-3xl lg:text-5xl">
+            {client.name}
+          </h2>
+          <h3 className="font-semibold xxxs:text-base md:text-lg">Цель:</h3>
+          <p className="xxxs:text-base md:text-lg">{client.goal}</p>
+          <h3 className="font-semibold xxxs:text-base md:text-lg">Решение:</h3>
+          <p className="xxxs:text-base md:text-lg">{client.solution}</p>
+          <h3 className="font-semibold xxxs:text-base md:text-lg">
+            Результат:
+          </h3>
+          <p className="xxxs:text-base md:text-lg">{client.result}</p>
+        </div>
+      </div>
+
+      {/* Comment */}
+      {client.comment && (
+        <div className="mt-24 p-8 flex flex-col bg-black max-w-[800px] min-h-[300px] rounded-[45px] mx-auto">
+          <div className="flex flex-wrap mt-5 items-center justify-between">
+            <div className="flex gap-3">
+              <img src="/user-icon.png" alt="comment-icon" />
+              <div className="flex flex-col">
+                <h3 className="text-white text-lg">{client.name}</h3>
+                <h3 className="text-white">user212454</h3>
+              </div>
+            </div>
+            <img src="/отзыв.png" />
+          </div>
+          <p className="text-white mt-5">{client.comment}</p>
+        </div>
+      )}
+
+      {/* <div className="p-8">
         <h1 className="text-4xl font-bold">{client.name}</h1>
         <img src={client.image} alt={client.name} className="my-4 w-full" />
         <p className="text-xl">{client.description}</p>
@@ -53,12 +90,12 @@ const ClientDetails = () => {
             <strong>Comment:</strong> {client.comment}
           </p>
         )}
-      </div>
+      </div> */}
 
-      <div className="flex justify-center mt-24">
+      <div className="flex container mx-auto justify-center mt-24">
         <Swiper
           spaceBetween={16} // Space between slides
-          slidesPerView={3} // Show 3 slides at a time
+          slidesPerView={3} // Default to show 3 slides at a time
           autoplay={{
             delay: 0, // No delay, continuously scroll
             disableOnInteraction: false, // Keeps autoplay running even after user interaction
@@ -67,19 +104,19 @@ const ClientDetails = () => {
           freeMode={true} // Enables smooth, continuous scrolling
           allowTouchMove={true} // Allow user to manually swipe
           speed={3000} // Smooth transition between slides
-          className="min-h-[600px] w-full" // Full width to stretch and control centering
+          className="xxxs:min-h-[500px] sm:min-h-[500px] lg:min-h-[600px] w-full max-w-full" // Full width to stretch and control centering
           breakpoints={{
             100: {
-              slidesPerView: 1, // 1 slide on smaller screens
-              centeredSlides: true, // Centers the single slide
+              slidesPerView: "auto", // Allow slide to take up only the necessary width
+              centeredSlides: true, // Center the slides on mobile
             },
             640: {
-              slidesPerView: 2, // 2 slides on medium screens
-              centeredSlides: true, // Center slides on medium screens
+              slidesPerView: 2, // Auto slide size on medium screens
+              centeredSlides: true, // Center the slides on medium screens
             },
             1228: {
-              slidesPerView: 3, // 3 slides on large screens
-              centeredSlides: true, // Center slides on larger screens
+              slidesPerView: 3, // 3 slides on larger screens
+              centeredSlides: false, // No centering on larger screens
             },
           }}
         >

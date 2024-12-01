@@ -35,14 +35,14 @@ const Portfolio = () => {
           freeMode={true} // Enables smooth, continuous scrolling
           allowTouchMove={true} // Allow user to manually swipe
           speed={3000} // Smooth transition between slides
-          className="min-h-[600px] w-full max-w-full" // Full width to stretch and control centering
+          className="xxxs:min-h-[500px] sm:min-h-[500px] lg:min-h-[600px] w-full max-w-full" // Full width to stretch and control centering
           breakpoints={{
             100: {
               slidesPerView: "auto", // Allow slide to take up only the necessary width
               centeredSlides: true, // Center the slides on mobile
             },
             640: {
-              slidesPerView: "auto", // Auto slide size on medium screens
+              slidesPerView: 2, // Auto slide size on medium screens
               centeredSlides: true, // Center the slides on medium screens
             },
             1228: {
