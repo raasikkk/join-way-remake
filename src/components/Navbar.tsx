@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import LanguageSwitcher from "./LanguageSwitcher";
 // import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
   // Handle Navbar
@@ -64,8 +65,10 @@ const Navbar = () => {
               alt="logo"
               className="logo hover:-translate-y-1 transition lg:hidden"
             />
-            <div className="buttons xxs:flex xs:flex sm:flex md:flex lg:hidden gap-[3rem]">
+            <div className="buttons xxs:flex xs:flex sm:flex md:flex items-center lg:hidden gap-6">
               {/* <!-- Dark Mode Switcher --> */}
+              <LanguageSwitcher />
+
               <button
                 onClick={toggleDarkMode}
                 className={`switch-btn  ${
@@ -138,8 +141,10 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div className="buttons xxxs:hidden xxs:hidden xs:hidden sm:hidden md:hidden lg:flex gap-[3rem]">
+        <div className="buttons xxxs:hidden xxs:hidden xs:hidden sm:hidden md:hidden lg:flex items-center gap-[3rem]">
           {/* <!-- Dark Mode Switcher --> */}
+          <LanguageSwitcher />
+
           <button
             onClick={toggleDarkMode}
             className={`switch-btn  ${

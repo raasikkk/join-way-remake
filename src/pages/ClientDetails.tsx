@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Project from "../components/Project";
 import Preloader from "../components/Preloader";
@@ -60,15 +60,23 @@ const ClientDetails = () => {
       {/* <LanguageSwitcher /> */}
       {error && <p>{error}</p>}
 
-      <div className="container mx-auto xxxs:mt-10 md:mt-16 lg:mt-24 flex xxxs:flex-wrap customlg:flex-nowrap p-3 gap-14">
+      <div className="container mx-auto xxxs:mt-10 md:mt-16 lg:mt-24 flex xxxs:flex-wrap customlg:flex-nowrap p-3 customlg:justify-around text-black dark:text-white">
         <div className="flex">
-          <img src={client.image} alt="client" />
+          <img src={client.image} alt="client" className="" />
         </div>
         <div className="flex flex-col w-[700px]">
-          <h2 className="font-bold xxxs:text-lg sm:text-xl md:text-3xl lg:text-5xl">
-            {client.name}
-          </h2>
-          <h3 className="font-semibold xxxs:text-base md:text-lg">
+          <div className="flex items-center justify-between sm:mt-5">
+            <h2 className="font-bold xxxs:text-lg  sm:text-3xl md:text-3xl lg:text-5xl">
+              {client.name}
+            </h2>
+            <Link
+              to={client.link}
+              className="mr-5 xxxs:text-base md:text-lg text-j-blue dark:text-j-yellow font-bold flex items-center gap-3"
+            >
+              {t("card_btn_2")} <i className="fas fa-arrow-right "></i>
+            </Link>
+          </div>
+          <h3 className="font-semibold mt-5 xxxs:text-base md:text-lg">
             {t("goal")}:
           </h3>
           <p className="xxxs:text-base md:text-lg">
@@ -91,7 +99,7 @@ const ClientDetails = () => {
 
       {/* Comment */}
       {getFieldByLanguage(client, "comment") && (
-        <div className="mt-24 p-8 flex flex-col bg-black max-w-[800px] min-h-[300px] rounded-[45px] mx-auto">
+        <div className="mt-24 p-8 flex flex-col bg-j-blue max-w-[800px] min-h-[300px] rounded-[45px] mx-auto">
           <div className="flex flex-wrap mt-5 items-center justify-between">
             <div className="flex gap-3">
               <img src="/user-icon.png" alt="comment-icon" />

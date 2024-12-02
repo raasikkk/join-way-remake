@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const { t } = useTranslation();
+
   return (
     <>
       <section className="hero mt-[100px] container mx-auto">
