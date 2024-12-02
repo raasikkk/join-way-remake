@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import axiosInstance from "../api/axiosInstance";
+// import { useState, useEffect } from "react";
+// import axiosInstance from "../api/axiosInstance";
 import Project from "./Project";
 import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,27 +9,28 @@ import "swiper/css/autoplay";
 import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
 import { FreeMode } from "swiper/modules";
+import { clients } from "../constants/clients";
 
 const Portfolio = () => {
   SwiperCore.use([Autoplay, FreeMode]);
   const { t } = useTranslation();
   // Django data
-  const [clients, setClients] = useState([]);
-  const [error, setError] = useState<string | null>(null);
+  // const [clients, setClients] = useState([]);
+  // const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchClients = async () => {
-      try {
-        const response = await axiosInstance.get("clients/");
-        setClients(response.data);
-      } catch (err) {
-        setError("Failed to fetch clients");
-        console.error(err);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchClients = async () => {
+  //     try {
+  //       const response = await axiosInstance.get("clients/");
+  //       setClients(response.data);
+  //     } catch (err) {
+  //       setError("Failed to fetch clients");
+  //       console.error(err);
+  //     }
+  //   };
 
-    fetchClients();
-  }, []);
+  //   fetchClients();
+  // }, []);
 
   return (
     <section
@@ -44,7 +45,6 @@ const Portfolio = () => {
 
       {/* Swiper */}
       <div className="flex justify-center mt-24">
-        {error && <p>{error}</p>}
         <Swiper
           spaceBetween={16} // Space between slides
           slidesPerView={3} // Default to show 3 slides at a time

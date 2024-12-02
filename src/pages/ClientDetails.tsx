@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Project from "../components/Project";
 import Preloader from "../components/Preloader";
@@ -12,43 +13,22 @@ import "swiper/css/autoplay";
 import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
 import { FreeMode } from "swiper/modules";
-import axiosInstance from "../api/axiosInstance";
-// import LanguageSwitcher from "../components/LanguageSwitcher";
+// import axiosInstance from "../api/axiosInstance";
 import { useTranslation } from "react-i18next";
+// import { Client } from "../constants/clients";
+import { clients } from "../constants/clients";
 
 const ClientDetails = () => {
   SwiperCore.use([Autoplay, FreeMode]);
   useIntersectionObserver("show");
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [clients, setClients] = useState([]);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchClients = async () => {
-      try {
-        const response = await axiosInstance.get("clients/");
-        setClients(response.data);
-      } catch (err) {
-        setError("Failed to fetch clients");
-        console.error(err);
-      }
-    };
-    fetchClients();
-  }, []);
-
   const { id } = useParams<{ id: string }>();
   const client = clients.find((c) => c.id === parseInt(id || "", 10));
-
-  const getFieldByLanguage = (client, field) => {
-    const lang = i18n.language; // Get the current language
-    return client[`${field}_${lang}`] || client[`${field}_en`]; // Default to English if the language is not available
-  };
-
   if (!client) {
     return <p>Client not found</p>;
   }
@@ -57,9 +37,6 @@ const ClientDetails = () => {
     <>
       <Preloader />
       <Navbar />
-      {/* <LanguageSwitcher /> */}
-      {error && <p>{error}</p>}
-
       <div className="container mx-auto xxxs:mt-10 md:mt-16 lg:mt-24 flex xxxs:flex-wrap customlg:flex-nowrap p-3 customlg:justify-around text-black dark:text-white">
         <div className="flex">
           <img src={client.image} alt="client" className="" />
@@ -70,7 +47,7 @@ const ClientDetails = () => {
               {client.name}
             </h2>
             <Link
-              to={client.link}
+              to={""}
               className="mr-5 xxxs:text-base md:text-lg text-j-blue dark:text-j-yellow font-bold flex items-center gap-3"
             >
               {t("card_btn_2")} <i className="fas fa-arrow-right "></i>
@@ -79,26 +56,20 @@ const ClientDetails = () => {
           <h3 className="font-semibold mt-5 xxxs:text-base md:text-lg">
             {t("goal")}:
           </h3>
-          <p className="xxxs:text-base md:text-lg">
-            {getFieldByLanguage(client, "goal")}
-          </p>
+          <p className="xxxs:text-base md:text-lg">{client.goal}</p>
           <h3 className="font-semibold xxxs:text-base md:text-lg">
             {t("solution")}:
           </h3>
-          <p className="xxxs:text-base md:text-lg">
-            {getFieldByLanguage(client, "solution")}
-          </p>
+          <p className="xxxs:text-base md:text-lg">{client.solution}</p>
           <h3 className="font-semibold xxxs:text-base md:text-lg">
             {t("result")}:
           </h3>
-          <p className="xxxs:text-base md:text-lg">
-            {getFieldByLanguage(client, "result")}
-          </p>
+          <p className="xxxs:text-base md:text-lg">{client.solution}</p>
         </div>
       </div>
 
       {/* Comment */}
-      {getFieldByLanguage(client, "comment") && (
+      {client.comment && (
         <div className="mt-24 p-8 flex flex-col bg-j-blue max-w-[800px] min-h-[300px] rounded-[45px] mx-auto">
           <div className="flex flex-wrap mt-5 items-center justify-between">
             <div className="flex gap-3">
@@ -110,9 +81,7 @@ const ClientDetails = () => {
             </div>
             <img src="/отзыв.png" />
           </div>
-          <p className="text-white mt-5">
-            {getFieldByLanguage(client, "comment")}
-          </p>
+          <p className="text-white mt-5">{client.comment}</p>
         </div>
       )}
 

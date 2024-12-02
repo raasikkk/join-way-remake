@@ -8,13 +8,13 @@ import { Link } from "react-router-dom";
 
 const Project = ({ client }) => {
   const navigate = useNavigate();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  // Helper function to get the client data based on the current language
-  const getFieldByLanguage = (client, field) => {
-    const lang = i18n.language; // Get the current language
-    return client[`${field}_${lang}`] || client[`${field}_en`]; // Default to English if the language is not available
-  };
+  // // Helper function to get the client data based on the current language
+  // const getFieldByLanguage = (client, field) => {
+  //   const lang = i18n.language; // Get the current language
+  //   return client[`${field}_${lang}`] || client[`${field}_en`]; // Default to English if the language is not available
+  // };
 
   const handleDetailsClick = () => {
     window.scrollTo(0, 0);
@@ -35,7 +35,7 @@ const Project = ({ client }) => {
           </h3>
           <p className="mt-3 text-j-blue xxxs:text-base md:text-lg lg:text-xl">
             {/* Use getFieldByLanguage to fetch the correct description */}
-            {getFieldByLanguage(client, "description")}
+            {client.description}
           </p>
           <div className="buttons mt-8 flex justify-between gap-6">
             <button
