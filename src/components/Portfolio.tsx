@@ -9,11 +9,13 @@ import "swiper/css/autoplay";
 import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
 import { FreeMode } from "swiper/modules";
-import { clients } from "../constants/clients";
+// import { clients } from "../constants/clients";
+import { getClients } from "../constants/clients";
 
 const Portfolio = () => {
   SwiperCore.use([Autoplay, FreeMode]);
   const { t } = useTranslation();
+  const clients = getClients();
   // Django data
   // const [clients, setClients] = useState([]);
   // const [error, setError] = useState<string | null>(null);

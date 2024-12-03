@@ -16,7 +16,8 @@ import { FreeMode } from "swiper/modules";
 // import axiosInstance from "../api/axiosInstance";
 import { useTranslation } from "react-i18next";
 // import { Client } from "../constants/clients";
-import { clients } from "../constants/clients";
+// import { clients } from "../constants/clients";
+import { getClients } from "../constants/clients";
 
 const ClientDetails = () => {
   SwiperCore.use([Autoplay, FreeMode]);
@@ -26,6 +27,8 @@ const ClientDetails = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const clients = getClients();
 
   const { id } = useParams<{ id: string }>();
   const client = clients.find((c) => c.id === parseInt(id || "", 10));
@@ -47,7 +50,7 @@ const ClientDetails = () => {
               {client.name}
             </h2>
             <Link
-              to={""}
+              to={client.link}
               className="mr-5 xxxs:text-base md:text-lg text-j-blue dark:text-j-yellow font-bold flex items-center gap-3"
             >
               {t("card_btn_2")} <i className="fas fa-arrow-right "></i>

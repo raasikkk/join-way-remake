@@ -61,5 +61,31 @@
   "card_btn_1": "More Details",
   "card_btn_2": "Website",
 
-  "client_1_description": "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use."
+  "clients.grand_market.description": "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use.",
+  "clients.grand_market.goal": "To provide modern and high-quality trade equipment that helps optimize our clients' business processes.",
+  "clients.grand_market.solution": "A comprehensive approach to equipping retail and warehouse spaces: cash registers, display cases, shelves, and accounting systems, tailored to your business needs.",
+  "clients.grand_market.result": "Effective equipment for retail spaces, enhancing productivity and convenience for both retail and warehouse operations.",
+  "clients.grand_market.comment": "Working with Join-Way exceeded our expectations! The team quickly developed a user-friendly and stylish website that perfectly reflects our brand and simplifies communication with clients. Their professionalism, attention to detail, and personalized approach made the collaboration incredibly comfortable. We recommend Join-Way as a reliable partner for web solutions!",
+
+  "clients.gic_company.description": "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use.",
+  "clients.gic_company.goal": "To create an easy-to-use interface for quick access to information about the company's services and expertise, highlighting its reliability.",
+  "clients.gic_company.solution": "We developed a site with simple navigation, including sections about GIC's key services, projects, and partners.",
+  "clients.gic_company.result": "The new site enhanced GIC's online presence and simplified communication with potential clients, providing a convenient platform to showcase their work.",
+  "clients.gic_company.comment": "Working with Join-Way was overall positive. The team created a functional and user-friendly website that met our expectations. The process went smoothly, though there are a few areas for improvement. Overall, we are happy with the result and can recommend Join-Way as a reliable partner for web solutions.",
+
+  "clients.join_way_shop.description": "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use.",
+  "clients.join_way_shop.goal": "To create a modern e-commerce site with an intuitive interface for users and an optimized system for managing products and orders.",
+  "clients.join_way_shop.solution": "We developed an easy-to-navigate website with a responsive design, ensuring seamless navigation and functionality for buyers.",
+  "clients.join_way_shop.result": "The new site improved the user experience, increased conversion rates, simplified the purchasing process, and enhanced the efficiency of managing the online store.",
+
+  "clients.join_way_learn.description": "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use.",
+  "clients.join_way_learn.goal": "To create a user-friendly website for online courses with easy access to materials and interaction between students and instructors.",
+  "clients.join_way_learn.solution": "We developed a platform with easy navigation and tools for registration and communication.",
+  "clients.join_way_learn.result": "The site improved the accessibility of materials and increased student engagement.",
+
+  "clients.portfolio_dimash.description": "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use.",
+  "clients.portfolio_dimash.goal": "To create a personal portfolio website that effectively showcases professional skills and projects.",
+  "clients.portfolio_dimash.solution": "Join-Way's team developed a stylish and functional website with a focus on my work and achievements.",
+  "clients.portfolio_dimash.result": "The new website became an excellent showcase for my projects, increasing interest from potential clients and partners.",
+  "clients.portfolio_dimash.comment": "What can I say, this is my team — Join-Way. The guys created an excellent portfolio site, taking into account all my requests and ideas. Very pleased with the result and the quality of work. I highly recommend them as reliable specialists!"
 }

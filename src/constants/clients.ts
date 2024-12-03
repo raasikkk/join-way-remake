@@ -1,85 +1,64 @@
-export interface Client {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-  goal: string;
-  solution: string;
-  result: string;
-  comment?: string;
-  link: string;
-}
+import { useTranslation } from "react-i18next";
+// import { Client } from './types'; // Adjust the path based on your project structure.
 
-export const clients: Client[] = [
-  {
-    id: 1,
-    name: "Grand Market",
-    image: "/clients/grand-market.png",
-    description:
-      "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use.",
-    goal: "Предоставлять современное и качественное торговое оборудование, которое помогает оптимизировать бизнес-процессы наших клиентов.",
-    solution:
-      "Комплексный подход к оснащению торговых и складских помещений: кассовые аппараты, витрины, стеллажи и системы учета, адаптированные под ваши бизнес-задачи.",
-    result:
-      "Эффективное оснащение торговых пространств, повышающее продуктивность и удобство для ритейла и складов.",
-    comment:
-      "Работа с Join-Way превзошла наши ожидания! Команда оперативно разработала удобный и стильный сайт, который идеально отражает наш бренд и упрощает взаимодействие с клиентами. Профессионализм, внимание к деталям и индивидуальный подход сделали сотрудничество максимально комфортным. Рекомендуем Join-Way как надежных партнеров для создания веб-решений!",
-    link: "",
-  },
-  {
-    id: 2,
-    name: "GIC Company",
-    image: "/clients/global-industrial.png",
-    description:
-      "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use.",
-    goal: "Создать удобный интерфейс для легкого доступа к информации о услугах и опыте компании, подчеркивая ее надежность.",
-    solution:
-      "Мы разработали сайт с простой навигацией, включая разделы о ключевых услугах, проектах и партнерах GIC.",
-    result:
-      "Новый сайт улучшил онлайн-присутствие GIC и упростил связь с потенциальными клиентами, предоставив удобную платформу для демонстрации работы.",
-    comment:
-      "Сотрудничество с Join-Way было в целом положительным. Команда разработала удобный и функциональный сайт, который соответствует нашим ожиданиям. Процесс работы был достаточно гладким, однако есть несколько моментов, которые можно было бы улучшить. В целом, мы довольны результатом и можем порекомендовать Join-Way как надежного партнера для разработки веб-решений.",
-    link: "",
-  },
-  {
-    id: 3,
-    name: "Join Way Shop",
-    image: "/clients/join-way-shop.png",
-    description:
-      "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use.",
-    goal: "Создать современный интернет-магазин с удобным интерфейсом для пользователей и оптимизированной системой для управления товарами и заказами.",
-    solution:
-      "Мы разработали интуитивно понятный сайт с адаптивным дизайном, обеспечив простоту навигации и функциональность для покупателей.",
-    result:
-      "Новый сайт улучшил пользовательский опыт, увеличил конверсию и упростил процесс покупок, а также повысил эффективность управления интернет-магазином.",
-    link: "",
-  },
-  {
-    id: 4,
-    name: "Join Way Learn",
-    image: "/clients/join-way-learn.png",
-    description:
-      "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use.",
-    goal: "Создать удобный сайт для онлайн-курсов с простым доступом к материалам и взаимодействием между студентами и преподавателями.",
-    solution:
-      "Мы разработали платформу с легкой навигацией и инструментами для регистрации и общения.",
-    result:
-      "Сайт улучшил доступность материалов и повысил вовлеченность студентов.",
-    link: "",
-  },
-  {
-    id: 5,
-    name: "Portfolio Dimash",
-    image: "/clients/portfolio-dimash.png",
-    description:
-      "Our team designed the website with a focus on simple navigation and a structure that ensures ease of use.",
-    goal: "Создать персональный сайт-портфолио, который эффективно демонстрирует профессиональные навыки и проекты.",
-    solution:
-      "Команда Join-Way разработала стильный и функциональный сайт с акцентом на мои работы и достижения.",
-    result:
-      "Новый сайт стал отличной витриной для моих проектов, повысив интерес потенциальных клиентов и партнеров.",
-    comment:
-      "Ну что могу сказать, это моя команда — Join-Way. Ребята сделали отличный сайт для моего портфолио, учли все пожелания и идеи. Очень довольны результатом и качеством работы. Рекомендую их как надежных специалистов!",
-    link: "",
-  },
-];
+export const getClients = (): Client[] => {
+  const { t } = useTranslation();
+
+  return [
+    {
+      id: 1,
+      name: "Grand Market",
+      image: "/clients/grand-market.png",
+      description: t("clients.grand_market.description"),
+      goal: t("clients.grand_market.goal"),
+      solution: t("clients.grand_market.solution"),
+      result: t("clients.grand_market.result"),
+      comment: t("clients.grand_market.comment"),
+      link: "https://grand-market.vercel.app/",
+    },
+    {
+      id: 2,
+      name: "GIC Company",
+      image: "/clients/global-industrial.png",
+      description: t("clients.gic_company.description"),
+      goal: t("clients.gic_company.goal"),
+      solution: t("clients.gic_company.solution"),
+      result: t("clients.gic_company.result"),
+      comment: t("clients.gic_company.comment"),
+      link: "https://gi-construction.kz/",
+    },
+    {
+      id: 3,
+      name: "Join Way Shop",
+      image: "/clients/join-way-shop.png",
+      description: t("clients.join_way_shop.description"),
+      goal: t("clients.join_way_shop.goal"),
+      solution: t("clients.join_way_shop.solution"),
+      result: t("clients.join_way_shop.result"),
+      comment: "",
+      link: "https://join-way.com/",
+    },
+    {
+      id: 4,
+      name: "Join Way Learn",
+      image: "/clients/join-way-learn.png",
+      description: t("clients.join_way_learn.description"),
+      goal: t("clients.join_way_learn.goal"),
+      solution: t("clients.join_way_learn.solution"),
+      result: t("clients.join_way_learn.result"),
+      comment: "",
+      link: "https://learn.join-way.com/",
+    },
+    {
+      id: 5,
+      name: "Portfolio Dimash",
+      image: "/clients/portfolio-dimash.png",
+      description: t("clients.portfolio_dimash.description"),
+      goal: t("clients.portfolio_dimash.goal"),
+      solution: t("clients.portfolio_dimash.solution"),
+      result: t("clients.portfolio_dimash.result"),
+      comment: t("clients.portfolio_dimash.comment"),
+      link: "https://dimash-aizharykov.is-great.org/",
+    },
+  ];
+};
