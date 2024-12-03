@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-// import { Client } from './types'; // Adjust the path based on your project structure.
+// import { Client } from "./types"; // Adjust path as needed.
 
-export const getClients = (): Client[] => {
+export const useClients = () => {
   const { t } = useTranslation();
 
   return [

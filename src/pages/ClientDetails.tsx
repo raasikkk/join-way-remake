@@ -17,7 +17,7 @@ import { FreeMode } from "swiper/modules";
 import { useTranslation } from "react-i18next";
 // import { Client } from "../constants/clients";
 // import { clients } from "../constants/clients";
-import { getClients } from "../constants/clients";
+import { useClients } from "../constants/clients";
 
 const ClientDetails = () => {
   SwiperCore.use([Autoplay, FreeMode]);
@@ -28,7 +28,7 @@ const ClientDetails = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const clients = getClients();
+  const clients = useClients();
 
   const { id } = useParams<{ id: string }>();
   const client = clients.find((c) => c.id === parseInt(id || "", 10));
