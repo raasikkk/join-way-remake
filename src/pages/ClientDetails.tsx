@@ -40,9 +40,9 @@ const ClientDetails = () => {
     <>
       <Preloader />
       <Navbar />
-      <div className="container mx-auto xxxs:mt-10 md:mt-16 lg:mt-24 flex xxxs:flex-wrap customlg:flex-nowrap p-3 customlg:justify-around text-black dark:text-white">
+      <div className="container mx-auto xxxs:mt-10 md:mt-16 lg:mt-24 flex items-center xxxs:flex-wrap customlg:flex-nowrap p-3 customlg:justify-around text-black dark:text-white">
         <div className="flex">
-          <img src={client.image} alt="client" className="" />
+          <img src={client.image} alt="client" className="w-full" />
         </div>
         <div className="flex flex-col w-[700px]">
           <div className="flex items-center justify-between sm:mt-5">
@@ -56,15 +56,15 @@ const ClientDetails = () => {
               {t("card_btn_2")} <i className="fas fa-arrow-right "></i>
             </Link>
           </div>
-          <h3 className="font-semibold mt-5 xxxs:text-base md:text-lg">
+          <h3 className="font-bold mt-5 xxxs:text-base md:text-lg">
             {t("goal")}:
           </h3>
           <p className="xxxs:text-base md:text-lg">{client.goal}</p>
-          <h3 className="font-semibold xxxs:text-base md:text-lg">
+          <h3 className="font-bold xxxs:text-base md:text-lg">
             {t("solution")}:
           </h3>
           <p className="xxxs:text-base md:text-lg">{client.solution}</p>
-          <h3 className="font-semibold xxxs:text-base md:text-lg">
+          <h3 className="font-bold xxxs:text-base md:text-lg">
             {t("result")}:
           </h3>
           <p className="xxxs:text-base md:text-lg">{client.solution}</p>

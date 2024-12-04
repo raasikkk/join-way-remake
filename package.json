@@ -21,6 +21,7 @@
     "react-router": "^7.0.1",
     "react-router-dom": "^7.0.1",
     "react-slick": "^0.30.2",
+    "react-typed": "^2.0.12",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.15"
   },

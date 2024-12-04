@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -20,29 +21,32 @@ const Contact = () => {
               <img src="/contacts-img.png" alt="contacts-img" />
             </div>
             <div className="contact-cards mt-[50px] flex flex-wrap justify-center customlg:justify-normal gap-[25px] hiddenYEl">
-              <a
-                href="https://www.instagram.com/joinway.24?igsh=eGM0d2Q3ZTR6c29k"
+              <Link
+                to="https://www.instagram.com/joinway.24?igsh=eGM0d2Q3ZTR6c29k"
                 className="contact-card"
               >
                 <i className="fa-brands fa-instagram"></i>
                 <h3>@joinway.24</h3>
-              </a>
-              <a href="#" className="contact-card">
+              </Link>
+              <Link
+                to="https://www.linkedin.com/company/joinway/"
+                className="contact-card"
+              >
                 <i className="fa-brands fa-linkedin-in"></i>
                 <h3>Join Way</h3>
-              </a>
+              </Link>
 
-              <a
-                href="https://www.tiktok.com/@joinway.shop?_t=8ohBCTJhCwH&_r=1"
+              <Link
+                to="https://www.tiktok.com/@joinway.shop?_t=8ohBCTJhCwH&_r=1"
                 className="contact-card"
               >
                 <i className="fa-brands fa-tiktok"></i>
                 <h3>@joinway.shop</h3>
-              </a>
-              <a href="#" className="contact-card">
+              </Link>
+              <Link to="https://t.me/JoinWay_bot" className="contact-card">
                 <i className="fa-brands fa-telegram"></i>
                 <h3>@join.way</h3>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="contacts-img xxs:hidden sm:hidden md:hidden lg:hidden customlg:block hiddenYEl">

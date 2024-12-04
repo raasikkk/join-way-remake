@@ -219,16 +219,15 @@ body {
   }
 
   .contact-card {
-    @apply w-[310px] h-[86px] px-[12px] bg-j-blue rounded-[12px] flex gap-[1.5rem] items-center;
+    @apply xs:w-56 md:w-[310px] h-[86px] xs:text-lg md:text-2xl xs:p-5 md:p-10 bg-j-blue rounded-[12px] flex xs:gap-2 md:gap-4 items-center;
   }
 
   .contact-card i {
-    aspect-ratio: 1;
-    @apply text-[40px] text-white border-4 rounded-full p-[10px] aspect-square;
+    @apply text-white border-2 rounded-full px-3 aspect-square flex items-center;
   }
 
   .contact-card h3 {
-    @apply text-[25px] text-white;
+    @apply text-white;
   }
 
   /* For Animations */

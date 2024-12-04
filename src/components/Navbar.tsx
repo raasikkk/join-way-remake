@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-// import LanguageSwitcher from "./LanguageSwitcher";
-// import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -14,6 +12,17 @@ const Navbar = () => {
   const toggleNav = () => {
     setIsOpen((prev) => !prev);
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   useEffect(() => {
     const linksHeight = linksRef.current?.getBoundingClientRect().height || 0;
@@ -108,7 +117,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#about"
+                  href="/#about"
                   className="scroll-link hover:border-b-2 border-j-blue dark:border-white"
                 >
                   {t("nav_link_2")}
@@ -116,7 +125,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#portfolio"
+                  href="/#portfolio"
                   className="scroll-link hover:border-b-2 border-j-blue dark:border-white"
                 >
                   {t("nav_link_3")}
@@ -124,7 +133,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="/#services"
                   className="scroll-link hover:border-b-2 border-j-blue dark:border-white"
                 >
                   {t("nav_link_4")}
@@ -132,7 +141,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#contacts"
+                  href="/#contacts"
                   className="scroll-link hover:border-b-2 border-j-blue dark:border-white"
                 >
                   {t("nav_link_5")}

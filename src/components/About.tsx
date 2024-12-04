@@ -4,7 +4,7 @@ const About = () => {
   const { t } = useTranslation();
   return (
     <>
-      <section id="about" className="about mt-[200px] container mx-auto">
+      <section id="about" className="about  container mx-auto">
         <div className="about-content xxs:p-[25px] sm:p-[35px] md:p-[40px] lg:p-[45px] w-full bg-j-blue rounded-[39px] ">
           <div className="about-main flex">
             <div className="about-descr md:w-[100%] lg:w-[100%] customlg:w-[50%]">

@@ -8,6 +8,9 @@ const Authors = () => {
         {/* <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold text-j-blue dark:text-j-yellow hiddenYEl">
           Authors
         </h1> */}
+        <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold text-j-blue dark:text-j-yellow hiddenYEl">
+          {t("our_team")}
+        </h1>
         <div className="mt-20 authors-cards gap-[50px] grid md:grid-cols-2 lg:grid-cols-4">
           <div className="author-card shadow-lg shadow-j-blue/35 hiddenYEl">
             <img

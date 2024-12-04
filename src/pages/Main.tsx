@@ -18,7 +18,9 @@ const Main = () => {
       {/* <LanguageSwitcher /> */}
       <Preloader />
       <Navbar />
-      <Hero />
+      <div id="hero">
+        <Hero />
+      </div>
       <div id="about">
         <About />
       </div>
