@@ -77,7 +77,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="h-[50px] mt-[50px] py-[15px] text-center text-white bg-j-dark text-[15px] font-semibold">
-        &copy; <span id="footerYear"></span> Join-Way. Все права защищены.
+        &copy; <span id="footerYear"></span> Join-Way. {t("rights")}
       </div>
     </footer>
   );
