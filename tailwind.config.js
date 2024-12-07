@@ -17,7 +17,7 @@ export default {
       colors: {
         "j-yellow": "#FFD700",
         "j-blue": "#340089",
-        "j-dark": "#1A202C",
+        "j-dark": "#000000",
       },
       keyframes: {
         scroll: {

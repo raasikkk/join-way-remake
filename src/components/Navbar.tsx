@@ -33,36 +33,37 @@ const Navbar = () => {
     }
   }, [isOpen]);
   // Handle Switch Mode
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => {
-    const currentMode = localStorage.getItem("theme");
-    if (currentMode === "dark") {
-      document.documentElement.classList.add("dark");
-      setIsDarkMode(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const currentMode = localStorage.getItem("theme");
+  //   if (currentMode === "dark") {
+  //     document.documentElement.classList.add("dark");
+  //     setIsDarkMode(true);
+  //   }
+  // }, []);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      if (newMode) {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      }
-      return newMode;
-    });
-  };
+  // const toggleDarkMode = () => {
+  //   setIsDarkMode((prevMode) => {
+  //     const newMode = !prevMode;
+  //     if (newMode) {
+  //       document.documentElement.classList.add("dark");
+  //       localStorage.setItem("theme", "dark");
+  //     } else {
+  //       document.documentElement.classList.remove("dark");
+  //       localStorage.setItem("theme", "light");
+  //     }
+  //     return newMode;
+  //   });
+  // };
 
   const { t } = useTranslation();
   return (
     <div className="container mx-auto">
-      <nav id="nav" className="mt-7 lg:flex ">
+      <nav id="nav" className="mt-7 lg:flex items-center ">
         <img
-          src={isDarkMode ? "/logo-dark.png" : "/logo-light.png"}
+          // src={isDarkMode ? "/logo-dark.png" : "/logo-light.png"}
+          src="/logo-grey.png"
           alt="logo"
           className="logo hover:-translate-y-1 transition xxxs:hidden lg:block"
         />
@@ -70,15 +71,16 @@ const Navbar = () => {
           {/* Nav Header  */}
           <div className="nav-header">
             <img
-              src={isDarkMode ? "/logo-dark.png" : "/logo-light.png"}
+              // src={isDarkMode ? "/logo-dark.png" : "/logo-grey.png"}
+              src="/logo-light.png"
               alt="logo"
-              className="logo hover:-translate-y-1 transition lg:hidden"
+              className="logo w-16 h-12 hover:-translate-y-1 transition lg:hidden"
             />
             <div className="buttons xxs:flex xs:flex sm:flex md:flex items-center lg:hidden gap-6">
               {/* <!-- Dark Mode Switcher --> */}
               <LanguageSwitcher />
 
-              <button
+              {/* <button
                 onClick={toggleDarkMode}
                 className={`switch-btn  ${
                   isDarkMode ? "slide" : ""
@@ -91,7 +93,7 @@ const Navbar = () => {
                   <i className="fa-regular fa-moon"></i>
                 </span>
                 <span className={`switch`}></span>
-              </button>
+              </button> */}
               {/* <!-- Burger Menu --> */}
               <button
                 onClick={toggleNav}
@@ -105,7 +107,7 @@ const Navbar = () => {
           <div ref={linksContainerRef} className="links-container">
             <ul
               ref={linksRef}
-              className="links text-j-blue dark:text-white transition-none"
+              className="links text-j-dark dark:text-white transition-none"
             >
               <li>
                 <Link
@@ -154,7 +156,7 @@ const Navbar = () => {
           {/* <!-- Dark Mode Switcher --> */}
           <LanguageSwitcher />
 
-          <button
+          {/* <button
             onClick={toggleDarkMode}
             className={`switch-btn  ${
               isDarkMode ? "slide" : ""
@@ -167,11 +169,11 @@ const Navbar = () => {
               <i className="fa-regular fa-moon"></i>
             </span>
             <span className="switch "></span>
-          </button>
+          </button> */}
           {/* <!-- Burger Menu --> */}
           <button
             onClick={toggleNav}
-            className="nav-toggle text-[1.5rem] cursor-pointer text-j-blue dark:text-white lg:hidden"
+            className="nav-toggle text-[1.5rem] cursor-pointer text-j-dark dark:text-white lg:hidden"
           >
             <i className="fas fa-bars"></i>
           </button>

@@ -55,10 +55,10 @@ const Timer = () => {
   return (
     <>
       <section className="timer mt-[200px]">
-        <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold dark:text-j-yellow text-j-blue text-center hiddenYEl ">
-          <span className="">20 %</span> {t("discount")}
+        <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold dark:text-j-yellow text-j-dark text-center hiddenYEl ">
+          <span className="text-j-blue">20 %</span> {t("discount")}
         </h1>
-        <h2 className="mt-[20px] max-w-[500px] mx-auto sm:text-[15.34px] md:text-[18.34px] lg:text-[22.34px] font-medium dark:text-j-yellow text-j-blue text-center hiddenYEl">
+        <h2 className="mt-[20px] max-w-[500px] mx-auto sm:text-[15.34px] md:text-[18.34px] lg:text-[22.34px] font-medium dark:text-j-yellow text-j-dark text-center hiddenYEl">
           {t("discount_descr")}
         </h2>
         {/* <!-- Deadline Timer --> */}
@@ -66,16 +66,16 @@ const Timer = () => {
           <div className="deadline-format relative w-[179px]" id="days">
             <img
               className="absolute max-w-[179px] animate-spin-slow"
-              src="/days-circle.png"
+              src="/circle-1.png"
               alt=""
             />
             <h3 className="">{format(timeLeft.days)}</h3>
-            <span className="span">{t("days")}</span>
+            <span className="span text-">{t("days")}</span>
           </div>
           <div className="deadline-format relative w-[179px]" id="days">
             <img
               className="absolute max-w-[179px] animate-spin-slow"
-              src="/hours-circle.png"
+              src="/circle-2.png"
               alt=""
             />
             <h3 className="">{format(timeLeft.hours)}</h3>
@@ -84,7 +84,7 @@ const Timer = () => {
           <div className="deadline-format relative w-[179px]" id="days">
             <img
               className="absolute max-w-[179px] animate-spin-slow"
-              src="/minutes-circle.png"
+              src="/circle-3.png"
               alt=""
             />
             <h3 className="">{format(timeLeft.minutes)}</h3>
@@ -93,7 +93,7 @@ const Timer = () => {
           <div className="deadline-format relative w-[179px]" id="days">
             <img
               className="absolute max-w-[179px] animate-spin-slow"
-              src="/seconds-circle.png"
+              src="/circle-4.png"
               alt=""
             />
             <h3 className="">{format(timeLeft.seconds)}</h3>

@@ -40,7 +40,7 @@ const Portfolio = () => {
       className="portfolio mt-[130px] container mx-auto overflow-hidden "
     >
       <div className="container mx-auto">
-        <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold text-j-blue dark:text-j-yellow hiddenYEl max-w-[527px]">
+        <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold text-j-dark dark:text-j-yellow hiddenYEl max-w-[527px]">
           {t("portfolio_header")}
         </h1>
       </div>

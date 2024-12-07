@@ -183,7 +183,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
   .author-card {
-    @apply bg-j-blue px-[50px] py-[15px] rounded-[36px] text-white text-center mx-auto;
+    @apply bg-j-dark px-[50px] py-[15px] rounded-[36px] text-white text-center mx-auto;
   }
 
   .portfolio-card {
@@ -203,7 +203,7 @@ body {
   }
 
   .service-card {
-    @apply relative max-w-[350px] h-[250px] px-[20px] bg-j-blue shadow-lg shadow-j-blue/35 rounded-[39px] overflow-visible text-white;
+    @apply relative max-w-[350px] h-[250px] px-[20px] bg-j-dark shadow-lg shadow-j-dark/35 rounded-[39px] overflow-visible text-white;
   }
 
   .deadline-format {
@@ -211,15 +211,15 @@ body {
   }
 
   .deadline-format > h3 {
-    @apply text-j-blue dark:text-white font-bold text-[52px] pt-11 text-center;
+    @apply text-j-dark dark:text-white font-bold text-[45px] pt-8 pr-5 text-center;
   }
 
   .span {
-    @apply text-[23px] text-j-blue dark:text-white pb-3 flex justify-center;
+    @apply text-[20px] text-j-dark dark:text-white pb-3 pr-5 flex justify-center;
   }
 
   .contact-card {
-    @apply xs:w-56 md:w-[310px] h-[86px] xs:text-lg md:text-2xl xs:p-5 md:p-10 bg-j-blue rounded-[12px] flex xs:gap-2 md:gap-4 items-center;
+    @apply xs:w-56 md:w-[310px] h-[86px] xs:text-lg md:text-2xl xs:p-5 md:p-10 bg-j-dark rounded-[12px] flex xs:gap-2 md:gap-4 items-center;
   }
 
   .contact-card i {
@@ -250,6 +250,10 @@ body {
     filter: blur(0);
     transform: translateY(0);
     transform: translateX(0);
+  }
+
+  .exp-card {
+    @apply bg-j-dark border-4 shadow-lg hover:-translate-y-2 hover:transition text-white rounded-[39px] p-[12px] px-[18px] pb-[20px];
   }
 
   /* Experience Cards Animation */

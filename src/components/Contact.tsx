@@ -11,10 +11,10 @@ const Contact = () => {
       <section id="contacts" className="contacts mt-[200px] container mx-auto">
         <div className="contacts-content flex">
           <div className="contacts-descr md:w-[100%] lg:w-[100%] customlg:w-[50%]">
-            <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold text-j-blue dark:text-j-yellow hiddenYEl">
+            <h1 className="xs:text-[25.34px] sm:text-[28.34px] md:text-[35.34px] lg:text-[42.34px] font-bold text-j-dark dark:text-j-yellow hiddenYEl">
               {t("contact_question")}
             </h1>
-            <h2 className="mt-[10px] xs:text-[17.34px] sm:text-[17.34px] md:text-[17.34px] lg:text-[24.34px] font-medium text-j-blue/75 dark:text-[#C6B55A] hiddenYEl">
+            <h2 className="mt-[10px] xs:text-[17.34px] sm:text-[17.34px] md:text-[17.34px] lg:text-[24.34px] font-medium text-j-dark/75 dark:text-[#C6B55A] hiddenYEl">
               {t("contact_offer")}
             </h2>
             <div className="contacts-img xxs:block sm:block md:block lg:block customlg:hidden hiddenYEl">

@@ -16,7 +16,7 @@ const Footer = () => {
     }
   }, [location]);
   return (
-    <footer className="mt-[50px] bg-j-blue min-h-[350px]">
+    <footer className="mt-[50px] bg-j-dark min-h-[350px]">
       <div className="container mx-auto">
         <div className="footer-main max-w-[900px] mx-auto">
           <img
@@ -61,22 +61,22 @@ const Footer = () => {
           </ul>
           <div className="social-icons mt-[35px] text-[30px] text-white flex justify-center xs:gap-[20px] md:gap-[25px]">
             <Link to="https://www.instagram.com/joinway.24?igsh=eGM0d2Q3ZTR6c29k">
-              <i className="fa-brands fa-instagram border-2 p-3 px-3.5 rounded-full hover:bg-j-yellow transition"></i>
+              <i className="fa-brands fa-instagram border-2 p-3 px-3.5 rounded-full hover:bg-j-blue transition"></i>
             </Link>
             <Link to="https://www.linkedin.com/company/joinway/">
-              <i className="fa-brands fa-linkedin-in border-2 p-3 px-3.5 rounded-full hover:bg-j-yellow transition"></i>
+              <i className="fa-brands fa-linkedin-in border-2 p-3 px-3.5 rounded-full hover:bg-j-blue transition"></i>
             </Link>
 
             <Link to="https://t.me/JoinWay_bot">
-              <i className="fa-brands fa-telegram border-2 p-3 rounded-full hover:bg-j-yellow transition"></i>
+              <i className="fa-brands fa-telegram border-2 p-3 rounded-full hover:bg-j-blue transition"></i>
             </Link>
             <Link to="https://www.tiktok.com/@joinway.shop?_t=8ohBCTJhCwH&_r=1">
-              <i className="fa-brands fa-tiktok border-2 p-3 px-3.5 rounded-full hover:bg-j-yellow transition"></i>
+              <i className="fa-brands fa-tiktok border-2 p-3 px-3.5 rounded-full hover:bg-j-blue transition"></i>
             </Link>
           </div>
         </div>
       </div>
-      <div className="h-[50px] mt-[50px] py-[15px] text-center text-white bg-[#170239] text-[15px] font-semibold">
+      <div className="h-[50px] mt-[50px] py-[15px] text-center text-white bg-j-dark text-[15px] font-semibold">
         &copy; <span id="footerYear"></span> Join-Way. Все права защищены.
       </div>
     </footer>

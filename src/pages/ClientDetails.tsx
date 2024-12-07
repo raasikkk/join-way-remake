@@ -51,7 +51,7 @@ const ClientDetails = () => {
             </h2>
             <Link
               to={client.link}
-              className="mr-5 xxxs:text-base md:text-lg text-j-blue dark:text-j-yellow font-bold flex items-center gap-3"
+              className="mr-5 xxxs:text-base md:text-lg text-j-dark dark:text-j-yellow font-bold flex items-center gap-3"
             >
               {t("card_btn_2")} <i className="fas fa-arrow-right "></i>
             </Link>
@@ -73,7 +73,7 @@ const ClientDetails = () => {
 
       {/* Comment */}
       {client.comment && (
-        <div className="mt-24 p-8 flex flex-col bg-j-blue max-w-[800px] min-h-[300px] rounded-[45px] mx-auto">
+        <div className="mt-24 p-8 flex flex-col bg-j-dark max-w-[800px] min-h-[300px] rounded-[45px] mx-auto">
           <div className="flex flex-wrap mt-5 items-center justify-between">
             <div className="flex gap-3">
               <img src="/user-icon.png" alt="comment-icon" />

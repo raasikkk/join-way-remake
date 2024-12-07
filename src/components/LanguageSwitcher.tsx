@@ -38,7 +38,7 @@ const LanguageSwitcher = () => {
   return (
     <>
       <button
-        className="text-[40px] text-j-blue dark:text-j-yellow"
+        className="text-[40px] text-j-dark dark:text-j-yellow"
         onClick={() => setIsSwitcherVisible(!isSwitcherVisible)}
       >
         <i className="fas fa-language"></i>
