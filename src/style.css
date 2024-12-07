@@ -183,7 +183,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
   .author-card {
-    @apply bg-j-dark px-[50px] py-[15px] rounded-[36px] text-white text-center mx-auto;
+    @apply bg-j-dark max-w-[300px] px-[50px] py-[15px] rounded-[36px] text-white text-center mx-auto;
   }
 
   .portfolio-card {
