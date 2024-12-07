@@ -72,7 +72,7 @@ const Navbar = () => {
           <div className="nav-header">
             <img
               // src={isDarkMode ? "/logo-dark.png" : "/logo-grey.png"}
-              src="/logo-light.png"
+              src="/logo-grey.png"
               alt="logo"
               className="logo w-16 h-12 hover:-translate-y-1 transition lg:hidden"
             />
