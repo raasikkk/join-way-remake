@@ -12,7 +12,7 @@ const About = () => {
                 {t("about_header")}
               </h1>
               <div className="about-img sm:block md:block lg:block customlg:hidden hiddenYEl">
-                <img src="/about-img.png" alt="about-img" />
+                <img src="/black-about-us.png" alt="about-img" />
               </div>
               <div className="paragraphs mt-[27px] text-[16px] text-white gap-[37px]">
                 <p className="mb-[27px] hiddenYEl">{t("about_descr_1")}</p>
@@ -21,7 +21,7 @@ const About = () => {
               </div>
             </div>
             <div className="about-img xxs:hidden sm:hidden md:hidden lg:hidden customlg:block float-right hiddenYEl">
-              <img src="/about-img.png" alt="about-img" />
+              <img src="/black-about-us.png" alt="about-img" />
             </div>
           </div>
           {/* <!-- Experience --> */}

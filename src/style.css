@@ -24,7 +24,7 @@ body {
   html {
     font-family: "Montserrat", sans-serif;
     scroll-behavior: smooth;
-    @apply font-medium selection:bg-[#ffd9009b];
+    @apply font-medium selection:bg-[#4042E3]/50;
   }
   #preloader {
     position: fixed;

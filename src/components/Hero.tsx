@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
       <section className="hero mt-[100px] xs:min-h-[350px] md:min-h-[500px] container mx-auto">
         <div className="hero-content max-w-[970px] h-auto mx-auto">
           <h1 className="xxs:text-[25.91px] sm:text-[35.91px] md:text-[45.91px] lg:text-[55.91px] font-bold text-center dark:text-white xs:min-h-[150px] md:min-h-[230px]">
-            <span className="text-j-blue">{t("hero_project")}</span>
+            <span className="text-[#4042E3]">{t("hero_project")}</span>
             <ReactTyped
               strings={[`${t("hero_descr")}`]}
               typeSpeed={50}

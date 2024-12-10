@@ -18,7 +18,7 @@ const Contact = () => {
               {t("contact_offer")}
             </h2>
             <div className="contacts-img xxs:block sm:block md:block lg:block customlg:hidden hiddenYEl">
-              <img src="/contacts-img.png" alt="contacts-img" />
+              <img src="/black-contact-us.png" alt="contacts-img" />
             </div>
             <div className="contact-cards mt-[50px] flex flex-wrap justify-center customlg:justify-normal gap-[25px] hiddenYEl">
               <Link
@@ -50,7 +50,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="contacts-img xxs:hidden sm:hidden md:hidden lg:hidden customlg:block hiddenYEl">
-            <img src="/contacts-img.png" alt="contacts-img" />
+            <img src="/black-contact-us.png" alt="contacts-img" />
           </div>
         </div>
       </section>
